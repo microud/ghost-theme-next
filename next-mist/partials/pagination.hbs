@@ -1,0 +1,16 @@
+<nav class="pagination">
+    {{#if prev}}
+        <a class="page-number" href="{{page_url prev}}"><i class="fa fa-angle-left"></i></a>
+    {{/if}}
+    <a>第{{page}}页 / 共{{pages}}页</a>
+    {{#if next}}
+        <a class="extend next" rel="next" href="{{page_url next}}"><i class="fa fa-angle-right"></i></a>
+    {{/if}}
+    <!--
+    <span class="page-number current">1</span>
+    <a class="page-number" href="/page/2/">2</a>
+    <span class="space">…</span>
+    <a class="page-number" href="/page/7/">7</a>
+    <a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    -->
+</nav>
