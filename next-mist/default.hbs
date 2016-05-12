@@ -23,6 +23,7 @@
     <link href="{{asset "vendors/fancybox/jquery.fancybox.css"}}" rel="stylesheet" type="text/css">
     <link href="{{asset "vendors/font-awesome/css/font-awesome.min.css"}}" rel="stylesheet" type="text/css">
     <link href="{{asset "css/main.css"}}" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
     <!-- End Style-->
     <!--
     <style type="text/css">.MathJax_Preview {color: #888}
@@ -110,16 +111,8 @@
         </div>
     </header>
     <main id="main" class="main">
-        <div class="main-inner page-post-detail">
+        <div class="main-inner">
             {{{body}}}
-            <div class="sidebar-toggle">
-                <div class="sidebar-toggle-line-wrap">
-                    <span class="sidebar-toggle-line sidebar-toggle-line-first" style="width: 100%; top: 0px; transform: rotateZ(0deg); opacity: 1; left: 0px;"></span>
-                    <span class="sidebar-toggle-line sidebar-toggle-line-middle" style="width: 100%; opacity: 1; left: 0px; top: 0px; transform: rotateZ(0deg);"></span>
-                    <span class="sidebar-toggle-line sidebar-toggle-line-last" style="width: 100%; top: 0px; transform: rotateZ(0deg); opacity: 1; left: 0px;"></span>
-                </div>
-            </div>
-            {{> sidebar}}
         </div>
     </main>
 
@@ -150,7 +143,7 @@
     }
 </script>
 
-<script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+
 <script type="text/javascript" src="{{asset "vendors/velocity/velocity.min.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/velocity/velocity.ui.min.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/fastclick/lib/fastclick.min.js"}}"></script>
