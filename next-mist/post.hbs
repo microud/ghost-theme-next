@@ -46,6 +46,7 @@
                 </article>
             </div>
         </div>
+
     </div>
 {{/post}}
 <div class="sidebar-toggle">
@@ -82,8 +83,8 @@
 </aside>
 <script type="text/javascript">
     $(".site-overview").css("display","none");
-    if ($(".post-body h2").length > 0) {
-        $(".post-body h2").each(function () {
+    if ($("#content h2").length > 0) {
+        $("#content h2").each(function () {
             $(this).attr("id", $(this).html().replace(/ +/g, '-').replace(/<(\/a|a).*>/g, ""));
             $("#category_nav").html($("#category_nav").html() + '<li class="nav-item nav-level-2"><a class="nav-link" href="#' + $(this).html().replace(/ +/g, '-').replace(/<(\/a|a).*>/g, "") + '"><span class="nav-text">' + $(this).html().replace(/<(\/a|a).*>/g, "") + '</span></a></li>');
         });
