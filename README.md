@@ -1,2 +1,15 @@
-# ghost-theme-next
-Elegant theme for Ghost.
+# NexT
+	精于心，简于形
+
+不要吐槽我在NexT原主题那里Copy来的句子（逃
+
+Readme就是作为一个使用文档，走起
+
+##安装
+鉴于Ghost在Production运行模式下更改主题的内容是要重启才能生效，所以为了避免修改配置而切换主题，我把NexT的三套样式分成了三个主题，切换主题只需要在后台全局设置中选择即可。
+
+###无Git安装：
+
+点击代码上方的 `Download ZIP`
+
+

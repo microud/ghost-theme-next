@@ -7,7 +7,11 @@
             <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
                 <div class="site-state-item site-state-posts">
                     <a href="/archives">
-                        <span class="site-state-item-count">32</span>
+                        <span class="site-state-item-count">
+                            {{#get "posts"}}
+                                {{pagination.total}}
+                            {{/get}}
+                        </span>
                         <span class="site-state-item-name">文章</span>
                     </a>
                 </div>
@@ -18,8 +22,12 @@
       </a>
     </div>-->
                 <div class="site-state-item site-state-categories">
-                    <a href="/categories">
-                        <span class="site-state-item-count">11</span>
+                    <a href="/tags">
+                        <span class="site-state-item-count">
+                            {{#get "tags"}}
+                                {{pagination.total}}
+                            {{/get}}
+                        </span>
                         <span class="site-state-item-name">标签</span>
                     </a>
                 </div>
