@@ -1,12 +1,12 @@
         <section class="site-overview sidebar-panel" style="opacity: 1; display: block; transform: translateY(0px);">
             <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person" style="opacity: 1; display: block; transform: translateX(0px);">
                 <img class="site-author-image" itemprop="image" src="{{@blog.cover}}" alt="{{@blog.title}}">
-                <p class="site-author-name" itemprop="name">云青陌</p>
+                <p class="site-author-name" itemprop="name">待修改</p>
                 <p class="site-description motion-element" itemprop="description" style="opacity: 1; display: block; transform: translateX(0px);">{{@blog.description}}</p>
             </div>
             <nav class="site-state motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
                 <div class="site-state-item site-state-posts">
-                    <a href="/archives">
+                    <a href="/records">
                         <span class="site-state-item-count">
                             {{#get "posts"}}
                                 {{pagination.total}}
@@ -31,12 +31,13 @@
                         <span class="site-state-item-name">标签</span>
                     </a>
                 </div>
+                <!--
                 <div class="site-state-item site-state-tags">
                     <a href="/tags">
                         <span class="site-state-item-count">62</span>
                         <span class="site-state-item-name">标签</span>
                     </a>
-                </div>
+                </div>-->
             </nav>
             <div class="feed-link motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
                 <a href="/rss" rel="alternate"><i class="fa fa-rss"></i>RSS</a>
@@ -44,12 +45,15 @@
             <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
             </div>
             <div class="links-of-author motion-element" style="opacity: 1; display: block; transform: translateX(0px);">
-                <p class="site-author-name">Links</p>
-              <span class="links-of-author-item">
-                <a href="http://jm.taobao.org" target="_blank">阿里中间件博客</a>
-              </span>
-              <span class="links-of-author-item">
-                <a href="http://blog.flink-china.org" target="_blank">Flink China</a>
-              </span>
+                <p class="site-author-name">友情链接</p>
+
+                <!--添加友情链接位置，每复制一个span并修改链接及内容即可-->
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">友情链接</a></span>
+                <!--友链结束位置-->
+
             </div>
         </section>
