@@ -11,7 +11,7 @@
     <meta name="description" content="{{meta_description}}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{@blog.title}}">
-    <meta property="og:url" content="http://wuchong.me/index.html">
+    <meta property="og:url" content="{{@blog.url}}">
     <meta property="og:site_name" content="{{@blog.title}}">
     <meta property="og:description" content="{{meta_description}}">
     <meta name="twitter:card" content="summary">
@@ -24,6 +24,7 @@
     <link href="{{asset "vendors/font-awesome/css/font-awesome.min.css"}}" rel="stylesheet" type="text/css">
     <link href="{{asset "css/main.css"}}" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+    <script src="{{asset "js/temp.js"}}></script>
     <!-- End Style-->
     <!--
     <style type="text/css">.MathJax_Preview {color: #888}
@@ -106,6 +107,14 @@
                     <form class="site-search-form">
                         <input type="text" id="st-search-input" class="st-search-input st-default-search-input" autocomplete="off" autocorrect="off" autocapitalize="off">
                     </form>
+                    <script type="text/javascript">
+                        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+                                    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+                            e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+                        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+                        <!--install-->_st('install', '8Exkz7xsCTJyyCHiK9TY','2.0.0');
+                    </script>
                 </div>
             </nav>
         </div>
@@ -146,6 +155,7 @@
 <script type="text/javascript" src="{{asset "vendors/jquery_lazyload/jquery.lazyload.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/fancybox/jquery.fancybox.pack.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/ua-parser-js/ua-parser.pack.js"}}"></script>
+<script type="text/javascript" src="{{asset "vendors/swiftype/st.js"}}"></script>
 
 <script type="text/javascript" src="{{asset "js/motion.js"}}"></script>
 <script type="text/javascript" src="{{asset "js/utils.js"}}"></script>
