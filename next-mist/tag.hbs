@@ -1,7 +1,5 @@
 {{!< default}}
 
-
-
 <div class="content-wrap">
     <div id="content" class="content">
 
@@ -13,7 +11,7 @@
             {{/tag}}
 
             {{#foreach posts}}
-                <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" style="opacity: 1; display: block; transform: translateY(0px);">
+                <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" >
                     <header class="post-header">
                         <h1 class="post-title" style="margin-left: 94px">
                             <a class="post-title-link" href="{{url}}" itemprop="url">
@@ -32,3 +30,15 @@
         </div>
     </div>
 </div>
+<div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-last" ></span>
+    </div>
+</div>
+<aside id="sidebar" class="sidebar" style="display: none; width: 320px;">
+    <div class="sidebar-inner">
+        {{> sidebar}}
+    </div>
+</aside>
