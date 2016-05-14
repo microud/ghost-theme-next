@@ -16,13 +16,10 @@
 
 进入 `ghost_path/content/themes`，执行
 
-	git clone git@github.com:microud/ghost-theme-next.git .
-
-或者直接执行
-
-	git clone git@github.com:microud/ghost-theme-next.git ghost_path/content/themes
+	git clone https://github.com/microud/ghost-theme-next.git
+	mv ghost-theme-next/* .
 	
-然后修改修改自己所需配置，重启Ghost。
+然后修改修改自己所需配置，重启Ghost。至于 `ghost-theme-next` 目录删除即可。
 
 ##配置主题
 
