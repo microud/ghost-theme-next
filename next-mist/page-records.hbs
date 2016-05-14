@@ -5,7 +5,7 @@
         <section id="posts" class="posts-collapse">
             <span class="archive-move-on"></span>
             <span class="archive-page-counter">好! 目前共计&nbsp;{{#get "posts"}}{{pagination.total}}{{/get}}&nbsp;篇日志。 继续努力。</span>
-            <div id="hidden-temp-container">
+            <div id="hidden-temp-container" style="display: none;">
                 {{#get "posts" limit="all"}}
                     {{#foreach posts}}
                         <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -47,13 +47,13 @@
         if (counter == 0){
             currentYear = $(this).find("time").attr("year");
             $("#posts").html($("#posts").html() + '<div class="collection-title">' +
-                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '">' + currentYear + '</h2>' +
+                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '" style="opacity: 1;">' + currentYear + '</h2>' +
                     '</div>');
         }
         if($(this).find("time").attr("year") < currentYear) {
             currentYear = $(this).find("time").attr("year");
             $("#posts").html($("#posts").html() + '<div class="collection-title">' +
-                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '">' + currentYear + '</h2>' +
+                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '" style="opacity: 1;">' + currentYear + '</h2>' +
                     '</div>');
         }
         $("#posts").append($(this));
