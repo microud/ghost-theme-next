@@ -10,7 +10,7 @@
                          </h1>
                          <div class="post-meta">
                              <span class="post-time">
-                                 <span class="post-meta-item-icon"></span>
+                                 <span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span>
                                  <span class="post-meta-item-text">发表于</span>
                                  <time>{{date format='YYYY-MM-DD'}}</time>
                              </span>
@@ -22,6 +22,11 @@
                                          {{tags}}
                                      {{/if}}
                                  </span>
+                             </span>
+                             <span class="post-comments-count">&nbsp; | &nbsp;
+                                 <a href="{{url}}#comments" itemprop="discussionUrl">
+                                     <span class="post-comments-count ds-thread-count" data-thread-key="{{id}}" itemprop="commentsCount"></span>
+                                 </a>
                              </span>
                          </div>
                      </header>
@@ -49,3 +54,17 @@
         {{> sidebar}}
      </div>
  </aside>
+ <script type="text/javascript">
+ //    $(".post-comments-count").each(function(){
+   //      var duoshuo_data = $.getJSON("http://api.duoshuo.com/threads/counts.json?short_name=" + duoshuo_name + "&threads=" + $(this).attr("data-thread-key"));
+//
+  //       if(duoshuo_data['comments'] == 0) {
+    //         $(this).html("暂无评论");
+      ///   }else {
+         //    $(this).html(duoshuo_data['comments'] + "条评论")
+//         /}
+
+//     });
+
+
+ </script>

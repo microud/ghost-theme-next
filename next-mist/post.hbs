@@ -25,7 +25,7 @@
                             </span>
                             <span class="post-comments-count">&nbsp; | &nbsp;
                                 <a href="#comments" itemprop="discussionUrl">
-                                    <span class="post-comments-count ds-thread-count" data-thread-key="" itemprop="commentsCount"></span>
+                                    <span class="post-comments-count ds-thread-count" data-thread-key="{{id}}" itemprop="commentsCount"></span>
                                 </a>
                             </span>
                             <!--
@@ -53,7 +53,7 @@
             <!-- 用多说通用代码的<script></script>包裹部分替换到下面的脚本 -->
             <script type="text/javascript">
                 /*    或者只替换下面的short_name为自己的    */
-                var duoshuoQuery = {short_name:"xknow"};
+                var duoshuoQuery = {short_name:duoshuo_name};
                 (function() {
                     var ds = document.createElement('script');
                     ds.type = 'text/javascript';ds.async = true;
