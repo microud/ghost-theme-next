@@ -5,10 +5,10 @@
         <section id="posts" class="posts-collapse">
             <span class="archive-move-on"></span>
             <span class="archive-page-counter">好! 目前共计&nbsp;{{#get "posts"}}{{pagination.total}}{{/get}}&nbsp;篇日志。 继续努力。</span>
-            <div id="hidden-temp-container" style="display: none;">
+            <div id="hidden-temp-container">
                 {{#get "posts" limit="all"}}
                     {{#foreach posts}}
-                        <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" style="opacity: 1; display: block; transform: translateY(0px);">
+                        <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
                             <header class="post-header">
                                 <h1 class="post-title">
                                     <a class="post-title-link" href="{{url}}" itemprop="url">
@@ -30,9 +30,9 @@
 </div>
 <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
-        <span class="sidebar-toggle-line sidebar-toggle-line-first" style="width: 100%; top: 0px; transform: rotateZ(0deg); opacity: 1; left: 0px;"></span>
-        <span class="sidebar-toggle-line sidebar-toggle-line-middle" style="width: 100%; opacity: 1; left: 0px; top: 0px; transform: rotateZ(0deg);"></span>
-        <span class="sidebar-toggle-line sidebar-toggle-line-last" style="width: 100%; top: 0px; transform: rotateZ(0deg); opacity: 1; left: 0px;"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
 </div>
 <aside id="sidebar" class="sidebar" style="display: none; width: 320px;">
@@ -47,13 +47,13 @@
         if (counter == 0){
             currentYear = $(this).find("time").attr("year");
             $("#posts").html($("#posts").html() + '<div class="collection-title">' +
-                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '" style="opacity: 1; display: block; transform: translateX(0px);">' + currentYear + '</h2>' +
+                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '">' + currentYear + '</h2>' +
                     '</div>');
         }
         if($(this).find("time").attr("year") < currentYear) {
             currentYear = $(this).find("time").attr("year");
             $("#posts").html($("#posts").html() + '<div class="collection-title">' +
-                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '" style="opacity: 1; display: block; transform: translateX(0px);">' + currentYear + '</h2>' +
+                    '<h2 class="archive-year motion-element" id="archive-year-' + currentYear + '">' + currentYear + '</h2>' +
                     '</div>');
         }
         $("#posts").append($(this));
