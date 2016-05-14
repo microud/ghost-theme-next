@@ -55,16 +55,28 @@
      </div>
  </aside>
  <script type="text/javascript">
- //    $(".post-comments-count").each(function(){
-   //      var duoshuo_data = $.getJSON("http://api.duoshuo.com/threads/counts.json?short_name=" + duoshuo_name + "&threads=" + $(this).attr("data-thread-key"));
-//
-  //       if(duoshuo_data['comments'] == 0) {
-    //         $(this).html("暂无评论");
-      ///   }else {
-         //    $(this).html(duoshuo_data['comments'] + "条评论")
-//         /}
+     $(".ds-thread-count").each(function(){
+         var apiUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=" + duoshuo_name + "&threads=" + $(this).attr("data-thread-key")  + "&callback=?";
+         var currentObj = $(this);
+         var test = $.getJSON(apiUrl, function(data){
+             //console.log(data.response[0].comments);
+             //console.log(currentObj);
+             var id = currentObj.attr("data-thread-key");
+             //console.log(id);
+             var commentNumber = data.response[id].comments;
+             //console.log(commentNumber);
+             if(commentNumber == 0) {
+                 $(currentObj).html("暂无评论");
+             }else {
+                 $(currentObj).html(data['comments'] + "条评论")
+             }
+         });
 
-//     });
+         //console.log(test);
+
+
+
+     });
 
 
  </script>

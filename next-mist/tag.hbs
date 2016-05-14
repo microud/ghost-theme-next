@@ -10,23 +10,24 @@
             </div>
             {{/tag}}
 
-            {{#foreach posts}}
-                <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" >
-                    <header class="post-header">
-                        <h1 class="post-title" style="margin-left: 94px">
-                            <a class="post-title-link" href="{{url}}" itemprop="url">
-                                <span itemprop="name">{{title}}</span>
-                            </a>
-                        </h1>
-                        <div class="post-meta">
-                            <time>
-                                {{date format="YYYY-MM-DD"}}
-                            </time>
-                        </div>
-                    </header>
-                </article>
-            {{/foreach}}
-
+            {{#get "post" limit="all" fileter="tag:{{#tag}}{{id}}{{/tag}}"}}
+                {{#foreach posts}}
+                    <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" >
+                        <header class="post-header">
+                            <h1 class="post-title" style="margin-left: 94px">
+                                <a class="post-title-link" href="{{url}}" itemprop="url">
+                                    <span itemprop="name">{{title}}</span>
+                                </a>
+                            </h1>
+                            <div class="post-meta">
+                                <time>
+                                    {{date format="YYYY-MM-DD"}}
+                                </time>
+                            </div>
+                        </header>
+                    </article>
+                {{/foreach}}
+            {{/get}}
         </div>
     </div>
 </div>
