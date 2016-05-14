@@ -1,0 +1,59 @@
+        <section class="site-overview sidebar-panel" style="display: block;">
+            <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+                <img class="site-author-image" itemprop="image" src="{{@blog.cover}}" alt="{{@blog.title}}">
+                <p class="site-author-name" itemprop="name">待修改</p>
+                <p class="site-description motion-element" itemprop="description" >{{@blog.description}}</p>
+            </div>
+            <nav class="site-state motion-element" >
+                <div class="site-state-item site-state-posts">
+                    <a href="/records">
+                        <span class="site-state-item-count">
+                            {{#get "posts"}}
+                                {{pagination.total}}
+                            {{/get}}
+                        </span>
+                        <span class="site-state-item-name">文章</span>
+                    </a>
+                </div>
+                <!-- <div class="site-state-item site-state-categories">
+      <a href="/categories">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span>
+      </a>
+    </div>-->
+                <div class="site-state-item site-state-categories">
+                    <a href="/tags">
+                        <span class="site-state-item-count">
+                            {{#get "tags"}}
+                                {{pagination.total}}
+                            {{/get}}
+                        </span>
+                        <span class="site-state-item-name">标签</span>
+                    </a>
+                </div>
+                <!--
+                <div class="site-state-item site-state-tags">
+                    <a href="/tags">
+                        <span class="site-state-item-count">62</span>
+                        <span class="site-state-item-name">标签</span>
+                    </a>
+                </div>-->
+            </nav>
+            <div class="feed-link motion-element" >
+                <a href="/rss" rel="alternate"><i class="fa fa-rss"></i>RSS</a>
+            </div>
+            <div class="links-of-author motion-element" >
+            </div>
+            <div class="links-of-author motion-element" >
+                <p class="site-author-name">友情链接</p>
+
+                <!--添加友情链接位置，每复制一个span并修改链接及内容即可-->
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">这里是友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">这里还是友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">again,友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">呼呼友情链接</a></span>
+                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">再来一个友情链接</a></span>
+                <!--友链结束位置-->
+
+            </div>
+        </section>

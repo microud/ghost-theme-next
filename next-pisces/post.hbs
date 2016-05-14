@@ -42,6 +42,7 @@
                     <div class="post-body" itemprop="articleBody">
                         {{content}}
                     </div>
+
                 </article>
             </div>
         </div>
@@ -68,16 +69,9 @@
         </div>
     </div>
 {{/post}}
-<div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-        <span class="sidebar-toggle-line sidebar-toggle-line-first" style="background: #87daff;"></span>
-        <span class="sidebar-toggle-line sidebar-toggle-line-middle" style="background: #87daff;"></span>
-        <span class="sidebar-toggle-line sidebar-toggle-line-last" style="background: #87daff;"></span>
-    </div>
-</div>
 
-<aside id="sidebar" class="sidebar page-post-detail">
-    <div class="sidebar-inner">
+<aside id="sidebar" class="sidebar page-post-detail" style="width: 240px; display: block">
+    <div class="sidebar-inner affix-top">
         <ul class="sidebar-nav motion-element">
             <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
                 文章目录
@@ -88,15 +82,9 @@
         </ul>
         {{> sidebar}}
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-            <div class="post-toc-indicator-top post-toc-indicator">
-                <i class="fa fa-angle-double-up"></i>
-            </div>
             <div class="post-toc">
                 <div class="post-toc-content"><ol class="nav" id="category_nav">
                 </ol></div>
-            </div>
-            <div class="post-toc-indicator-bottom post-toc-indicator">
-                <i class="fa fa-angle-double-down"></i>
             </div>
         </section>
     </div>

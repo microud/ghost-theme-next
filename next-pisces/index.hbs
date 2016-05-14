@@ -1,0 +1,54 @@
+{{!< default}}
+ <div class="content-wrap">
+     <div id="content" class="content">
+         <section id="posts" class="posts-expand">
+             {{#foreach posts}}
+                 <article class="post posts-type-normal">
+                     <header class="post-header">
+                         <h1 class="post-title" itemprop="name headline">
+                             <a class="post-title-link" href="{{url}}">{{{title}}}</a>
+                         </h1>
+                         <div class="post-meta">
+                             <span class="post-time">
+                                 <span class="post-meta-item-icon"></span>
+                                 <span class="post-meta-item-text">发表于</span>
+                                 <time>{{date format='YYYY-MM-DD'}}</time>
+                             </span>
+                             <span class="post-category">&nbsp; | &nbsp;
+                                 <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span>
+                                 <span class="post-meta-item-text">标签</span>
+                                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                                     {{#if tags}}
+                                         {{tags}}
+                                     {{/if}}
+                                 </span>
+                             </span>
+                         </div>
+                     </header>
+                     <div class="post-body" itemprop="articleBody">
+                         {{content words="32"}}
+                         <div class="post-more-link text-center">
+                             <a class="btn" href="{{url}}" rel="contents">阅读全文 »</a>
+                         </div>
+                     </div>
+                     <footer class="post-footer">
+                         <div class="post-eof"></div>
+                     </footer>
+                 </article>
+             {{/foreach}}
+         </section>
+         {{pagination}}
+     </div>
+ </div>
+ <div class="sidebar-toggle">
+     <div class="sidebar-toggle-line-wrap">
+         <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+         <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+         <span class="sidebar-toggle-line sidebar-toggle-line-last" ></span>
+     </div>
+ </div>
+ <aside id="sidebar" class="sidebar" style="display: block; width: 240px;">
+     <div class="sidebar-inner">
+        {{> sidebar}}
+     </div>
+ </aside>
