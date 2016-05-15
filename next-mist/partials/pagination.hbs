@@ -2,9 +2,38 @@
     {{#if prev}}
         <a class="page-number" href="{{page_url prev}}"><i class="fa fa-angle-left"></i></a>
     {{/if}}
-    <a>第{{page}}页 / 共{{pages}}页</a>
+    <div id="pageInfo" currentPage="{{page}}" pageInTotal = "{{pages}}" style="display: none;"></div>
+    <a class="page-number" href="{{page_url}}">{{page}}</a>
+
+    <script>
+        var currentPage = parseInt($("#pageInfo").attr("currentPage"));
+        var pagesInTotal = parseInt($("#pageInfo").attr("pageInTotal"));
+        console.log(currentPage, pagesInTotal);
+        prePage = currentPage - 1;
+        nextPage = currentPage + 1;
+        var outPutList = new Array();
+        outPutList.push(1);
+        if(currentPage - 1 > 2)
+        {
+            console.log("-----------");
+            outPutList.push(0);
+        }else {
+            outPutList.push(prePage);
+            outPutList.push(currentPage);
+            outPutList.push(nextPage);
+        }
+
+        if(pagesInTotal - currentPage > 2)
+        {
+            outPutList.push(0);
+        }
+        outPutList.push(pagesInTotal);
+
+        console.log(outPutList);
+
+    </script>
     {{#if next}}
-        <a class="extend next" rel="next" href="{{page_url next}}"><i class="fa fa-angle-right"></i></a>
+        <a class="page-number extend next" rel="next" href="{{page_url next}}"><i class="fa fa-angle-right"></i></a>
     {{/if}}
     <!--
     <span class="page-number current">1</span>

@@ -27,7 +27,6 @@
     <!-- End Style-->
     <style type="text/css">.fancybox-margin{margin-right:15px;}</style>
 
-    {{ghost_head}}
     <script type="text/javascript" id="hexo.configuration">
         var NexT = window.NexT || {};
         var CONFIG = {
@@ -36,13 +35,18 @@
             fancybox: true,
             motion: true
         };
-
-        var duoshuo_name = "xknow";
     </script>
+    <div style="display: none">{{ghost_head}}</div>
+
 
 </head>
 
-
+<script>
+    var siteConfig = JSON.parse($("#site-config").html());
+    var duoshuo_name = siteConfig.duoshuo_name;
+    var author_name = siteConfig.author_name;
+    var link_list = siteConfig.links;
+</script>
 
 <body class="{{body_class}}">
 <div class="container one-collumn sidebar-position-left page-home">
@@ -104,6 +108,8 @@ $("#search-input").keypress(function(key){
     }
 
 });
+
+
 </script>
 <script type="text/javascript" src="{{asset "vendors/velocity/velocity.min.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/velocity/velocity.ui.min.js"}}"></script>

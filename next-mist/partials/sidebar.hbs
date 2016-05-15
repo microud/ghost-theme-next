@@ -1,7 +1,7 @@
         <section class="site-overview sidebar-panel" style="display: block;">
             <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
                 <img class="site-author-image" itemprop="image" src="{{@blog.cover}}" alt="{{@blog.title}}">
-                <p class="site-author-name" itemprop="name">待修改</p>
+                <p class="site-author-name" id="site-author-name" itemprop="name"></p>
                 <p class="site-description motion-element" itemprop="description" >{{@blog.description}}</p>
             </div>
             <nav class="site-state motion-element" >
@@ -44,16 +44,24 @@
             </div>
             <div class="links-of-author motion-element" >
             </div>
-            <div class="links-of-author motion-element" >
+            <div class="links-of-author motion-element" id="site-links">
                 <p class="site-author-name">友情链接</p>
 
-                <!--添加友情链接位置，每复制一个span并修改链接及内容即可-->
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">这里是友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">这里还是友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">again,友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">呼呼友情链接</a></span>
-                <span class="links-of-author-item"><a href="https://github.com/microud/ghost-theme-next" target="_blank">再来一个友情链接</a></span>
-                <!--友链结束位置-->
+                <!--友情链接位置，在后台修改head inject配置即可-->
 
             </div>
         </section>
+<script>
+    $("#site-author-name").html(author_name);
+    console.log(link_list);
+
+    console.log(link_list.length);
+    var i = 0;
+    for (i = 0; i < link_list.length; i++)
+    {
+        $("#site-links").html($("#site-links").html() + '<span class="links-of-author-item">' +
+                '<a href="' + link_list[i].link + '" target="_blank">' +
+                link_list[i].name +
+                '</a></span>');
+    }
+</script>
