@@ -21,21 +21,53 @@
 	
 然后修改修改自己所需配置，重启Ghost。至于 `ghost-theme-next` 目录删除即可。
 
+##必要配置
+
+需要在 `ghost后台 -> 实验功能 -> 开放 API` 勾选此选项。
+
+影响功能：
+
+- [x] 侧边栏的文章数和标签数不能获取
+- [x] 归档页面不能获取文章列表
+- [x] 标签页面不能获取标签列表
+
 ##配置主题
 
-###友情链接
+在 `插入代码（code inject）` 页面的 `{{ghost_head}}` 中插入如下代码（DIV中是JSON文本）
 
-打开 `sidebar.hbs` 鼠标拖滚动条直接到底，然后在注释block包裹的区间复制 span 标签并修改即可增删、编辑友情链接，如果是production模式下，需要重启Ghost才能生效。
+link中的名字和链接任意，显示在侧边栏的链接位置。
 
-###多说
+参数说明：
 
-待添加...
+- author_name: 显示在网站侧边栏上头像下的那个名字
+- duoshuo\_name: 多说的short_name, 用来标识多说所有者的那个东东，如果不填js会弹一会儿alert，不过可以在主题中删掉多说的代码...
+- links: 数组，理论上可无限添加，其中的每个元素对应的Json对象由name 和 link两个键值对构成，分别为链接名和地址，要加协议（http/https）
+
+	<div id="site-config">
+	{
+		"author_name": "云青陌",
+		"duoshuo_name": "xknow",
+		"links": [
+		{
+			"name": "认知",
+			"link": "http://xknow.net"
+		},
+		{
+			"name": "认知",
+			"link": "http://xknow.net"
+		},
+		{
+			"name": "认知",
+			"link": "http://xknow.net"
+		}
+		]
+	}
+	</div>
 
 ###阅读数记录
 
 待添加...
 
-##必要配置
 
 ###归档页面
 
@@ -54,14 +86,12 @@
 ###待添加功能
 
 - [ ] 搜索功能
-- [ ] 添加多说评论插件
 - [ ] 添加第三方阅读次数统计插件
 - [ ] 添加Muse主题
 - [ ] 添加Pisces主题
 
 ###bugs
 
-- [ ] 改一下Pagination的表现方式
 - [ ] tag页面最多只列5篇，考虑改用API实现
 
 ##贡献
