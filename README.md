@@ -42,27 +42,28 @@ link中的名字和链接任意，显示在侧边栏的链接位置。
 - author_name: 显示在网站侧边栏上头像下的那个名字
 - duoshuo\_name: 多说的short_name, 用来标识多说所有者的那个东东，如果不填js会弹一会儿alert，不过可以在主题中删掉多说的代码...
 - links: 数组，理论上可无限添加，其中的每个元素对应的Json对象由name 和 link两个键值对构成，分别为链接名和地址，要加协议（http/https）
-
-	<div id="site-config">
+<pre>
+	&lt;div id="site-config"&gt;
 	{
-		"author_name": "云青陌",
-		"duoshuo_name": "xknow",
-		"links": [
-		{
-			"name": "认知",
-			"link": "http://xknow.net"
-		},
-		{
-			"name": "认知",
-			"link": "http://xknow.net"
-		},
-		{
-			"name": "认知",
-			"link": "http://xknow.net"
-		}
-		]
+	    "author_name": "云青陌",
+	    "duoshuo_name": "xknow",
+	    "links": [
+	    {
+	        "name": "认知",
+	        "link": "http://xknow.net"
+	    },
+	    {
+	        "name": "认知",
+	        "link": "http://xknow.net"
+	    },
+	    {
+	        "name": "认知",
+	        "link": "http://xknow.net"
+	    }
+	    ]
 	}
-	</div>
+	&lt;/div&gt;
+</pre>
 
 ###阅读数记录
 
