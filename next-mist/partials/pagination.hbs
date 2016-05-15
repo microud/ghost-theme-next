@@ -3,7 +3,6 @@
         <a class="page-number" href="{{page_url prev}}"><i class="fa fa-angle-left"></i></a>
     {{/if}}
     <div id="pageInfo" currentPage="{{page}}" pageInTotal = "{{pages}}" style="display: none;"></div>
-    <a class="page-number" href="{{page_url}}">{{page}}</a>
 
     <script>
         var currentPage = parseInt($("#pageInfo").attr("currentPage"));
@@ -12,22 +11,59 @@
         prePage = currentPage - 1;
         nextPage = currentPage + 1;
         var outPutList = new Array();
-        outPutList.push(1);
-        if(currentPage - 1 > 2)
+
+        if (pagesInTotal <= 6)
         {
-            console.log("-----------");
-            outPutList.push(0);
+            for (var i = 0; i < pagesInTotal; i++)
+            {
+                outPutList.push(i + 1);
+            }
         }else {
-            outPutList.push(prePage);
-            outPutList.push(currentPage);
-            outPutList.push(nextPage);
+            if (currentPage == 1 || currentPage == 2 || currentPage == 3)
+            {
+                outPutList.push(1);
+                outPutList.push(2);
+                outPutList.push(3);
+                outPutList.push(4);
+                outPutList.push(0);
+                outPutList.push(pagesInTotal);
+            } else if (currentPage == pagesInTotal || currentPage == pagesInTotal - 1 || currentPage == pagesInTotal - 2)
+            {
+                outPutList.push(1);
+                outPutList.push(0);
+                outPutList.push(pagesInTotal - 3)
+                outPutList.push(pagesInTotal - 2);
+                outPutList.push(pagesInTotal - 1);
+                outPutList.push(pagesInTotal);
+            }else {
+                outPutList.push(1);
+                outPutList.push(0);
+                outPutList.push(currentPage - 1);
+                outPutList.push(currentPage);
+                outPutList.push(currentPage + 1);
+                outPutList.push(0);
+                outPutList.push(pagesInTotal);
+            }
+
         }
 
-        if(pagesInTotal - currentPage > 2)
+        var loop = outPutList.length;
+        var lastElement = $("#pageInfo");
+        for (var j = 0; j < loop; j++)
         {
-            outPutList.push(0);
+            console.log(j, outPutList[j]);
+            if (outPutList[j] == 0)
+            {
+                lastElement = lastElement.before('<span class="space">…</span>');
+            }else {
+                if(outPutList[j] == currentPage)
+                {
+                    lastElement = lastElement.before('<span class="page-number current">' + outPutList[j] + '</span>');
+                }else {
+                    lastElement = lastElement.before('<a class="page-number" href="/page/'+ outPutList[j] +'/">'+ outPutList[j] +'</a>');
+                }
+            }
         }
-        outPutList.push(pagesInTotal);
 
         console.log(outPutList);
 
@@ -35,11 +71,4 @@
     {{#if next}}
         <a class="page-number extend next" rel="next" href="{{page_url next}}"><i class="fa fa-angle-right"></i></a>
     {{/if}}
-    <!--
-    <span class="page-number current">1</span>
-    <a class="page-number" href="/page/2/">2</a>
-    <span class="space">…</span>
-    <a class="page-number" href="/page/7/">7</a>
-    <a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-    -->
 </nav>
