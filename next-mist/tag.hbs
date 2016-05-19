@@ -1,41 +1,56 @@
 {{!< default}}
 
+<div id="get-tag-name" tag-name="{{tag.name}}" style="display: none;"></div>
+
 <div class="content-wrap">
     <div id="content" class="content">
-
-        <div id="posts" class="posts-collapse">
-            {{#tag}}
-            <div class="collection-title">
-                <h2>{{name}}&nbsp;<small>标签</small></h2>
-            </div>
-            {{/tag}}
-
-            {{#get "post" limit="all" fileter="tag:{{#tag}}{{id}}{{/tag}}"}}
-                {{#foreach posts}}
-                    <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article" >
-                        <header class="post-header">
-                            <h1 class="post-title" style="margin-left: 94px">
-                                <a class="post-title-link" href="{{url}}" itemprop="url">
-                                    <span itemprop="name">{{title}}</span>
-                                </a>
-                            </h1>
-                            <div class="post-meta">
-                                <time>
-                                    {{date format="YYYY-MM-DD"}}
-                                </time>
-                            </div>
-                        </header>
-                    </article>
-                {{/foreach}}
-            {{/get}}
-        </div>
+        <section id="posts" class="posts-expand">
+            {{#foreach posts}}
+                <article class="post posts-type-normal">
+                    <header class="post-header">
+                        <h1 class="post-title" itemprop="name headline">
+                            <a class="post-title-link" href="{{url}}">{{{title}}}</a>
+                        </h1>
+                        <div class="post-meta">
+                             <span class="post-time">
+                                 <span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span>
+                                 <span class="post-meta-item-text">发表于</span>
+                                 <time>{{date format='YYYY-MM-DD'}}</time>
+                             </span>
+                             <span class="post-category">&nbsp; | &nbsp;
+                                 <span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span>
+                                 <span class="post-meta-item-text">标签</span>
+                                 <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                                     {{#if tags}}
+                                         {{tags}}
+                                     {{/if}}
+                                 </span>
+                             </span>
+                             <span class="post-comments-count">&nbsp; | &nbsp;
+                                 <a href="{{url}}#comments" itemprop="discussionUrl">
+                                     <span class="post-comments-count ds-thread-count" data-thread-key="{{id}}" itemprop="commentsCount"></span>
+                                 </a>
+                             </span>
+                        </div>
+                    </header>
+                    <div class="post-body" itemprop="articleBody">
+                        {{excerpt characters="140"}}
+                        <div class="post-more-link text-center">
+                            <a class="btn" href="{{url}}" rel="contents">阅读全文 »</a>
+                        </div>
+                    </div>
+                </article>
+            {{/foreach}}
+        </section>
+        {{pagination}}
     </div>
 </div>
+
 <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
         <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
         <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-        <span class="sidebar-toggle-line sidebar-toggle-line-last" ></span>
+        <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
 </div>
 <aside id="sidebar" class="sidebar" style="display: none; width: 320px;">

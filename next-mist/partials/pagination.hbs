@@ -1,4 +1,10 @@
-<nav class="pagination">
+{{#is "tag"}}
+    <nav class="pagination" page-info="tag">
+{{/is}}
+{{#is "index"}}
+    <nav class="pagination" page-info="index">
+{{/is}}
+
     {{#if prev}}
         <a class="page-number" href="{{page_url prev}}"><i class="fa fa-angle-left"></i></a>
     {{/if}}
@@ -8,10 +14,7 @@
         var currentPage = parseInt($("#pageInfo").attr("currentPage"));
         var pagesInTotal = parseInt($("#pageInfo").attr("pageInTotal"));
         console.log(currentPage, pagesInTotal);
-        prePage = currentPage - 1;
-        nextPage = currentPage + 1;
         var outPutList = new Array();
-
         if (pagesInTotal <= 6)
         {
             for (var i = 0; i < pagesInTotal; i++)
@@ -44,9 +47,7 @@
                 outPutList.push(0);
                 outPutList.push(pagesInTotal);
             }
-
         }
-
         var loop = outPutList.length;
         var lastElement = $("#pageInfo");
         for (var j = 0; j < loop; j++)
@@ -60,7 +61,14 @@
                 {
                     lastElement = lastElement.before('<span class="page-number current">' + outPutList[j] + '</span>');
                 }else {
-                    lastElement = lastElement.before('<a class="page-number" href="/page/'+ outPutList[j] +'/">'+ outPutList[j] +'</a>');
+
+                    if ($("#get-tag-name"))
+                    {
+                        lastElement = lastElement.before('<a class="page-number" href="/tag/' + $("#get-tag-name").attr("tag-name") + '/page/'+ outPutList[j] +'/">'+ outPutList[j] +'</a>');
+                    } else {
+                        lastElement = lastElement.before('<a class="page-number" href="/page/'+ outPutList[j] +'/">'+ outPutList[j] +'</a>');
+                    }
+
                 }
             }
         }
