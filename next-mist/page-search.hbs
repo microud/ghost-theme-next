@@ -1,35 +1,11 @@
 {{!< default}}
 
-<script>
-
-var keyword = window.location.search.substr(1).split('=')[1];
-alert(keyword);
-
-var cse;
-
-
-//处理结果回调函数示例
-function display (data) {
-    console.log(data);
-}
-
-//初始化回调函数示例
-function init () {
-    cse = new BCse.Search("12934274046869796976");    //参数为您的API引擎ID，已自动填写，必需。
-
-    cse.getResult(keyword, display);    //此方法获取搜索结果，参数1为搜索词，参数2为您获取到结果后想要执行的回调函数。
-}
-
-function loadScript () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.charset = "utf-8";
-    script.src = "http://zhannei.baidu.com/api/customsearch/apiaccept?sid=12934274046869796976&v=2.0&callback=init";
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(script, s);
-}
-
-loadScript();
-
-
-</script>
+<p>
+    搜索功能暂未开放...
+</p>
+<p>
+    ...(｡•ˇ‸ˇ•｡) ...
+</p>
+<p>
+    <a href="/">回到主页→</a> 
+</p>
