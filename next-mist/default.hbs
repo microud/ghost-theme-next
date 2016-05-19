@@ -23,6 +23,7 @@
     <link href="{{asset "vendors/fancybox/jquery.fancybox.css"}}" rel="stylesheet" type="text/css">
     <link href="{{asset "vendors/font-awesome/css/font-awesome.min.css"}}" rel="stylesheet" type="text/css">
     <link href="{{asset "css/main.css"}}" rel="stylesheet" type="text/css">
+    <link href="{{asset "vendors/highlight/css/github.css"}}" rel="stylesheet">
     <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
     <!-- End Style-->
     <style type="text/css">.fancybox-margin{margin-right:15px;}</style>
@@ -117,6 +118,7 @@ $("#search-input").keypress(function(key){
 <script type="text/javascript" src="{{asset "vendors/jquery_lazyload/jquery.lazyload.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/fancybox/jquery.fancybox.pack.js"}}"></script>
 <script type="text/javascript" src="{{asset "vendors/ua-parser-js/ua-parser.pack.js"}}"></script>
+<script type="text/javascript" src="{{asset "vendors/highlight/script/highlight.pack.js"}}"></script>
 
 <script type="text/javascript" src="{{asset "js/motion.js"}}"></script>
 <script type="text/javascript" src="{{asset "js/utils.js"}}"></script>
@@ -126,7 +128,9 @@ $("#search-input").keypress(function(key){
 
 <script type="text/javascript" src="{{asset "js/bootstrap.js"}}"></script>
 
-
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
 
 </body>
 </html>

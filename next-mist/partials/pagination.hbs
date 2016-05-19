@@ -62,7 +62,7 @@
                     lastElement = lastElement.before('<span class="page-number current">' + outPutList[j] + '</span>');
                 }else {
 
-                    if ($("#get-tag-name"))
+                    if ($("#get-tag-name").length > 0)
                     {
                         lastElement = lastElement.before('<a class="page-number" href="/tag/' + $("#get-tag-name").attr("tag-name") + '/page/'+ outPutList[j] +'/">'+ outPutList[j] +'</a>');
                     } else {
