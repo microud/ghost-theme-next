@@ -31,7 +31,11 @@
                          </div>
                      </header>
                      <div class="post-body" itemprop="articleBody">
-                         {{content words="32"}}
+                         {{#if meta_description}}
+                            {{meta_description}}
+                         {{else}}
+                            {{content words="32"}}
+                         {{/if}}
                          <div class="post-more-link text-center">
                              <a class="btn" href="{{url}}" rel="contents">阅读全文 »</a>
                          </div>
