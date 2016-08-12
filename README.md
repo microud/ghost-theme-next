@@ -10,7 +10,7 @@
 
 ###无Git安装：
 
-点击代码上方的 `Download ZIP`，并把三个子目录（next-mist/，next-muse/，next-pisces/）解压到 `ghost_path/content/themes` 目录下。
+点击代码上方的 `Download ZIP`，并把三个子目录（next-mist/，next-pisces/）解压到 `ghost_path/content/themes` 目录下。
 
 ###Git安装
 
