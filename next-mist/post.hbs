@@ -102,11 +102,33 @@
 </aside>
 <script type="text/javascript">
     $(".site-overview").css("display","none");
-    if ($("#content h2").length > 0) {
-        $("#content h2").each(function () {
+    $("#content h1").each(function () {
             $(this).attr("id", $(this).html().replace(/ +/g, '-').replace(/<(\/a|a).*>/g, ""));
-            $("#category_nav").html($("#category_nav").html() + '<li class="nav-item nav-level-2"><a class="nav-link" href="#' + $(this).html().replace(/ +/g, '-').replace(/<(\/a|a).*>/g, "") + '"><span class="nav-text">' + $(this).html().replace(/<(\/a|a).*>/g, "") + '</span></a></li>');
-        });
+    });
+    $("#content h2").each(function () {
+            $(this).attr("id", $(this).html().replace(/ +/g, '-').replace(/<(\/a|a).*>/g, ""));
+    });
+    $("#content h3").each(function () {
+            $(this).attr("id", $(this).html().replace(/ +/g, '-').replace(/<(\/a|a).*>/g, ""));
+    });
+
+    titles = document.querySelectorAll('h1,h2,h3');
+    if (titles.length > 0) {
+        for (i=1;i<titles.length;i++) {
+            var header =  titles[i];
+            var level = parseInt(header.tagName.replace('H', ''), 10);
+
+            if (level == 1) {
+                $("#category_nav").html($("#category_nav").html() + '<li class="nav-item nav-level-1"><a class="nav-link" href="#' + $(header).attr('id') + '"><span class="nav-text">' + $(header).html() + '</span></a></li>');
+
+            } else if (level ==2 ){
+                $("#category_nav").html($("#category_nav").html() + '<li class="nav-item nav-level-2" style="padding:0 0 0 20px"><a class="nav-link" href="#' + $(header).attr('id') + '"><span class="nav-text">' + $(header).html() + '</span></a></li>');
+
+            } else if (level ==3 ){
+                $("#category_nav").html($("#category_nav").html() + '<li class="nav-item nav-level-3" style="padding:0 0 0 40px"><a class="nav-link"    href="#' + $(header).attr('id') + '"><span class="nav-text">' + $(header).html() + '</span></a></li>');
+            } else {
+            }
+        }
     } else {
         $("#category_nav").html($("#category_nav").html() + '<span class="nav-text">暂无目录</span>');
     }
